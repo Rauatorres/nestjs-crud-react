@@ -4,7 +4,6 @@ import { apiGetClientList } from "./script";
 import type { Client } from "../../types/client";
 import ClientAddButton from "../client_add_button/ClientAddButton";
 
-
 const ClientList = () => {
     const [clientList, setClientList] = useState<Client[]>([]);
 
@@ -30,7 +29,7 @@ const ClientList = () => {
                 {showClientList(clientList)}
             </div>
             <div>
-                <ClientAddButton />
+                <ClientAddButton clientList={clientList} setter={setClientList} />
             </div>
         </>
     )
