@@ -1,8 +1,9 @@
 import type { ReactNode } from "react"
 
-const ClientCardAction = (props: { icon: ReactNode }) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const ClientCardAction = (props: { icon: ReactNode, action: () => Promise<any> }) => {
     return (
-        <span>{props.icon}</span>
+        <span onClick={() => props.action()}>{props.icon}</span>
     )
 }
 
