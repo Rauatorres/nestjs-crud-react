@@ -1,12 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ClientCard from "../client_card/ClientCard";
 import { apiGetClientList } from "./script";
 import type { Client } from "../../types/client";
 import ClientAddButton from "../client_add_button/ClientAddButton";
+import { ClientContext } from "../../context/ClientContext";
 
 const ClientList = () => {
     const [clientList, setClientList] = useState<Client[]>([]);
-    const [action, setAction] = useState(0);
+    const { action } = useContext(ClientContext);
 
     useEffect(() => {
         async function getClientListRequest(){
@@ -14,12 +15,12 @@ const ClientList = () => {
             setClientList(clientListResult)
         }
         getClientListRequest();
-    }, [action])
+    }, [action]);
 
     function showClientList(clientList: Client[]){
         return clientList.map(client => {
             return (
-                <ClientCard key={client.id} id={client.id} nome={client.name} idade={client.age} actionState={action} actionSetter={setAction}/>
+                <ClientCard key={client.id} id={client.id} nome={client.name} idade={client.age}/>
             );
         });
     }

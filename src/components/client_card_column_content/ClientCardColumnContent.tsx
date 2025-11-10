@@ -1,7 +1,7 @@
-const ClientCardColumn = (props: { content: string }) => {
+const ClientCardColumnContent = (props: { content: string}) => {
     return (
         <p>{props.content}</p>
     )
 };
 
-export default ClientCardColumn;
+export default ClientCardColumnContent;

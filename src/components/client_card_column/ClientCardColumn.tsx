@@ -1,11 +1,11 @@
-import ClientCardColumnContent from "../client_card_column_content/ClientCardColumnContent";
+import type { ReactNode } from "react";
 import ClientCardColumnTitle from "../client_card_column_title/ClientCardColumnTitle";
 
-const ClientCardColumn = (props: { title: string, content: string }) => {
+const ClientCardColumn = (props: { title: string, content: ReactNode }) => {
     return (
         <div>
             <ClientCardColumnTitle title={props.title} />
-            <ClientCardColumnContent content={props.content} />
+            {props.content}
         </div>
     )
 };
