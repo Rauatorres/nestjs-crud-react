@@ -35,7 +35,6 @@ const ClientContextWrapper = (props: { children: ReactNode }) => {
     function removeClientfromEditModeList(clientId: number){
         const filterClient = (client: { id: number, data: {name?: string, age?: number} }) => client.id != clientId;
         setClientEditModeList(clientEditModeList.filter(filterClient));
-        // console.log(clientEditModeList.filter(filterClient));
     }
 
     function updateClientInEditModeList(clientId: number, newData: {name?: string, age?: number}){

@@ -1,13 +1,18 @@
 import { useContext, useEffect, useState } from "react";
-import ClientCard from "../client_card/ClientCard";
-import { apiGetClientList } from "./script";
-import type { Client } from "../../types/client";
-import ClientAddButton from "../client_add_button/ClientAddButton";
+
 import { ClientContext } from "../../context/ClientContext";
 
+import { apiGetClientList } from "./script";
+
+import ClientCard from "../client_card/ClientCard";
+import ClientAddButton from "../client_add_button/ClientAddButton";
+
+import type { Client } from "../../types/client";
+
 const ClientList = () => {
-    const [clientList, setClientList] = useState<Client[]>([]);
     const { action } = useContext(ClientContext);
+
+    const [clientList, setClientList] = useState<Client[]>([]);
 
     useEffect(() => {
         async function getClientListRequest(){

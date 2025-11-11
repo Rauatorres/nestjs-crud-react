@@ -1,10 +1,13 @@
 import { useContext, useEffect, useState } from "react";
+
+import { ClientContext } from "../../context/ClientContext";
+
+import { numberToString } from "./script";
+
 import ClientCardActionsArea from "../client_card_actions_area/ClientCardActionsArea";
 import ClientCardColumn from "../client_card_column/ClientCardColumn";
 import ClientCardColumnContent from "../client_card_column_content/ClientCardColumnContent";
 import ClientCardColumnContentEdit from "../client_card_column_content_edit/ClientCardColumnContentEdit";
-import { numberToString } from "./script";
-import { ClientContext } from "../../context/ClientContext";
 
 const ClientCard = (props: { id: number, nome: string, idade: number | string }) => {
     const { clientEditModeList } = useContext(ClientContext)
@@ -20,7 +23,6 @@ const ClientCard = (props: { id: number, nome: string, idade: number | string })
     }, [clientEditModeList, props.id]);
 
     function showContent(isInEditMode: boolean, type: string, field: string, content: string){
-        // console.log(isInEditMode);
         if(isInEditMode){
             return (
                 <ClientCardColumnContentEdit type={type} clientId={props.id} field={field} content={content} />

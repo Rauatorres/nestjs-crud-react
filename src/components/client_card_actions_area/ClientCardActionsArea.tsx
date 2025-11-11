@@ -1,11 +1,13 @@
-// import { GoListUnordered } from "react-icons/go";
-import ClientCardAction from "../client_card_action/ClientCardAction";
-// import { MdDelete, MdModeEditOutline } from "react-icons/md";
-import { MdDelete, MdModeEditOutline } from "react-icons/md";
-import { deleteClient, editMode } from "./script";
 import { useContext, useState } from "react";
+
+import ClientCardAction from "../client_card_action/ClientCardAction";
+
+import { deleteClient, editMode } from "./script";
 import { ClientContext } from "../../context/ClientContext";
+
 import { FaCheck } from "react-icons/fa";
+import { MdDelete, MdModeEditOutline } from "react-icons/md";
+import { GoListUnordered } from "react-icons/go";
 
 const ClientCardActionsArea = (props: { clientId: number })=>{
     const { clientEditModeList, addClientToEditModeList, removeClientfromEditModeList } = useContext(ClientContext);
@@ -31,6 +33,7 @@ const ClientCardActionsArea = (props: { clientId: number })=>{
         }else{
             return (
                 <>
+                    <ClientCardAction icon={<GoListUnordered />} action={() => window.location.href = '/'}/>
                     <ClientCardAction icon={<MdModeEditOutline />} action={callEditMode} />
                     <ClientCardAction icon={<MdDelete />} action={async () => await deleteClient(props.clientId)} />
                 </>
@@ -40,7 +43,6 @@ const ClientCardActionsArea = (props: { clientId: number })=>{
 
     return (
         <div>
-            {/* <ClientCardAction icon={<GoListUnordered />} action="pedidos" client={props.clientId} /> */}
             {showActions(isInEditMode)}
         </div>
     );

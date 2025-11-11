@@ -1,0 +1,22 @@
+.navlink{
+    /* background-color: red; */
+    display: block;
+    width: fit-content;
+    text-decoration: none;
+    color: rgb(197, 197, 197);
+    margin: 2rem auto;
+    padding: 0.7rem 2rem;
+    border-radius: 0.5rem;
+    transition: color 0.2s;
+}
+.navlink:hover{
+    color: white;
+}
+
+.current{
+    background-color: white;
+    color: black;
+}
+.current:hover{
+    color: black;
+}

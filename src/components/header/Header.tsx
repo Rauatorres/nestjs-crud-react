@@ -1,8 +1,10 @@
 import Navbar from "../navbar/Navbar";
 
+import styles from "./header.module.css";
+
 const Header = (props: {currentPage: string}) => {
     return(
-        <header>
+        <header className={styles.header}>
             <Navbar currentPage={props.currentPage} />
         </header>
     )
