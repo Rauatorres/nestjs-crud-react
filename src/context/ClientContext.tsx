@@ -4,9 +4,10 @@ import { createContext, useState, type ReactNode } from "react";
 interface ClientContextValue{
     action: number;
     actionIncrease: () => void;
-    clientEditModeList: number[];
+    clientEditModeList: { id: number, data: {name?: string, age?: number} }[];
     addClientToEditModeList: (...params: any[]) => void,
     removeClientfromEditModeList: (...params: any[]) => void,
+    updateClientInEditModeList: (...params: any[]) => void,
 }
 
 const defaultValue: ClientContextValue  = {
@@ -14,29 +15,41 @@ const defaultValue: ClientContextValue  = {
     actionIncrease: () => {},
     clientEditModeList: [],
     addClientToEditModeList: () => {},
-    removeClientfromEditModeList: () => {}
+    removeClientfromEditModeList: () => {},
+    updateClientInEditModeList: () => {},
 };
 const ClientContext = createContext(defaultValue);
 
 const ClientContextWrapper = (props: { children: ReactNode }) => {
     const [action, setAction] = useState(0);
-    const [clientEditModeList, setClientEditModeList] = useState<number[]>([]);
+    const [clientEditModeList, setClientEditModeList] = useState<{ id: number, data: {name?: string, age?: number} }[]>([]);
 
     function actionIncrease(){
         setAction(action + 1);
     }
 
-    function addClientToEditModeList(clientId: number){
-        setClientEditModeList([ ...clientEditModeList, clientId ]);
+    function addClientToEditModeList(client: { id: number, data: {name?: string, age?: number} }){
+        setClientEditModeList([ ...clientEditModeList, client]);
+    }
+    
+    function removeClientfromEditModeList(clientId: number){
+        const filterClient = (client: { id: number, data: {name?: string, age?: number} }) => client.id != clientId;
+        setClientEditModeList(clientEditModeList.filter(filterClient));
+        // console.log(clientEditModeList.filter(filterClient));
     }
 
-    function removeClientfromEditModeList(clientId: number){
-        const filterClient = (id: number) => id != clientId;
-        setClientEditModeList(clientEditModeList.filter(filterClient));
+    function updateClientInEditModeList(clientId: number, newData: {name?: string, age?: number}){
+        const updatedList = clientEditModeList.map(client => {
+            if(client.id === clientId){
+                return { id: client.id, data: { ...client.data, ...newData } };
+            }
+            return client;
+        });
+        setClientEditModeList(updatedList);
     }
 
     return (
-        <ClientContext.Provider value={{ action, actionIncrease, clientEditModeList, addClientToEditModeList, removeClientfromEditModeList }} >{props.children}</ClientContext.Provider>
+        <ClientContext.Provider value={{ action, actionIncrease, clientEditModeList, addClientToEditModeList, removeClientfromEditModeList, updateClientInEditModeList }} >{props.children}</ClientContext.Provider>
     )
 }
 

@@ -11,8 +11,8 @@ const ClientCardActionsArea = (props: { clientId: number })=>{
     const { clientEditModeList, addClientToEditModeList, removeClientfromEditModeList } = useContext(ClientContext);
     const [isInEditMode, setIsInEditMode] = useState(false);
 
-    function callEditMode(){
-        editMode(
+    async function callEditMode(){
+        await editMode(
             props.clientId, 
             clientEditModeList, 
             isInEditMode,
