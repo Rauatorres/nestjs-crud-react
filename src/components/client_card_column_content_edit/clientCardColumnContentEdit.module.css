@@ -1,0 +1,12 @@
+.content{
+    all: unset;
+    margin-bottom: 1rem;
+    display: block;
+    background-color: #171717;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.7rem 0.5rem;
+    border-radius: 0.2rem;
+    position: relative;
+    top: -0.5rem;
+}

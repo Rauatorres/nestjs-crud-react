@@ -1,6 +1,8 @@
 import { useContext, type ReactNode } from "react"
 import { ClientContext } from "../../context/ClientContext";
 
+import styles from "./clientCardAction.module.css";
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const ClientCardAction = (props: { icon: ReactNode, action: (() => Promise<any>) | (() => void) }) => {
     const { actionIncrease } = useContext(ClientContext);
@@ -11,7 +13,7 @@ const ClientCardAction = (props: { icon: ReactNode, action: (() => Promise<any>)
     }
     
     return (
-        <span onClick={actionClick}>{props.icon}</span>
+        <span className={styles.action} onClick={actionClick}>{props.icon}</span>
     )
 }
 

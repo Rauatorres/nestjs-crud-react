@@ -9,6 +9,8 @@ import ClientCardColumn from "../client_card_column/ClientCardColumn";
 import ClientCardColumnContent from "../client_card_column_content/ClientCardColumnContent";
 import ClientCardColumnContentEdit from "../client_card_column_content_edit/ClientCardColumnContentEdit";
 
+import styles from "./clientCard.module.css";
+
 const ClientCard = (props: { id: number, nome: string, idade: number | string }) => {
     const { clientEditModeList } = useContext(ClientContext)
     const [isInEditMode, setIsInEditMode] = useState(false);
@@ -35,9 +37,9 @@ const ClientCard = (props: { id: number, nome: string, idade: number | string })
     }
 
     return (
-        <div>
-            <ClientCardColumn title="nome" content={showContent(isInEditMode, 'text', 'name', props.nome)} />
-            <ClientCardColumn title="idade" content={showContent(isInEditMode, 'number', 'age', numberToString(props.idade))} />
+        <div className={styles.card}>
+            <ClientCardColumn title="Nome" content={showContent(isInEditMode, 'text', 'name', (props.nome).toUpperCase())} />
+            <ClientCardColumn title="Idade" content={showContent(isInEditMode, 'number', 'age', numberToString(props.idade))} />
             <ClientCardActionsArea clientId={props.id}/>
         </div>
     )

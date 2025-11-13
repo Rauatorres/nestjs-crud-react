@@ -1,6 +1,8 @@
+import styles from "./clientCardColumnContent.module.css";
+
 const ClientCardColumnContent = (props: { content: string}) => {
     return (
-        <p>{props.content}</p>
+        <p className={styles.content}>{props.content}</p>
     )
 };
 

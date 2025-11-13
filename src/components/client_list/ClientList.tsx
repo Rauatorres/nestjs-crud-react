@@ -9,6 +9,8 @@ import ClientAddButton from "../client_add_button/ClientAddButton";
 
 import type { Client } from "../../types/client";
 
+import styles from "./clientList.module.css";
+
 const ClientList = () => {
     const { action } = useContext(ClientContext);
 
@@ -31,14 +33,14 @@ const ClientList = () => {
     }
 
     return (
-        <>
-            <div>
+        <div className={styles.clientListBox}>
+            <div className={styles.clientList}>
                 {showClientList(clientList)}
             </div>
             <div>
                 <ClientAddButton clientList={clientList} setter={setClientList} />
             </div>
-        </>
+        </div>
     )
 };
 

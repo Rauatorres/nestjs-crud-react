@@ -9,6 +9,8 @@ import { FaCheck } from "react-icons/fa";
 import { MdDelete, MdModeEditOutline } from "react-icons/md";
 import { GoListUnordered } from "react-icons/go";
 
+import styles from "./clientCardActionsArea.module.css";
+
 const ClientCardActionsArea = (props: { clientId: number })=>{
     const { clientEditModeList, addClientToEditModeList, removeClientfromEditModeList } = useContext(ClientContext);
     const [isInEditMode, setIsInEditMode] = useState(false);
@@ -42,7 +44,7 @@ const ClientCardActionsArea = (props: { clientId: number })=>{
     }
 
     return (
-        <div>
+        <div className={styles.actionsArea}>
             {showActions(isInEditMode)}
         </div>
     );

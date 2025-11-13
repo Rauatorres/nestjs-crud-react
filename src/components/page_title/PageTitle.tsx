@@ -1,6 +1,8 @@
+import styles from './page_title.module.css';
+
 const PageTitle = (props: { text: string }) => {
     return (
-        <h1>{props.text}</h1>
+        <h1 className={styles.title}>{props.text}</h1>
     )
 };
 

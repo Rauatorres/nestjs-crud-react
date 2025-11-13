@@ -1,0 +1,5 @@
+.content{
+    width: calc(100vw - var(--header-width));
+    margin-left: var(--header-width);
+    padding: 5rem 11rem;
+}
