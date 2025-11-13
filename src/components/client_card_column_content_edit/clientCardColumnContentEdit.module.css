@@ -10,3 +10,12 @@
     position: relative;
     top: -0.5rem;
 }
+
+.content:focus{
+    background-color: #0a0a0a;
+}
+
+.content::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
