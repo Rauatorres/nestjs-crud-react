@@ -1,0 +1,18 @@
+.productListTitleLine{
+    display: flex;
+    border-bottom: 2px solid white;
+}
+
+.col1, .col2, .col3{
+    padding: var(--product-columns-padding);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.col1{
+    width: var(--product-column-1-width);
+}
+
+.col2{
+    width: var(--product-column-2-width);
+}

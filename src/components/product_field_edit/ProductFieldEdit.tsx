@@ -1,4 +1,4 @@
-function ProductFieldEdit<T extends string | number>(props: { value: string | number, setFieldValue: React.Dispatch<React.SetStateAction<T>>}){
+function ProductFieldEdit<T extends string | number>(props: { value: string | number, setFieldValue: React.Dispatch<React.SetStateAction<T>>, class: string}){
 
     let inputType: string;
 
@@ -9,7 +9,7 @@ function ProductFieldEdit<T extends string | number>(props: { value: string | nu
     }
 
     return (
-        <input type={inputType} value={props.value} onChange={e => props.setFieldValue(e.target.value as T)} />
+        <input className={props.class} type={inputType} value={props.value} onChange={e => props.setFieldValue(e.target.value as T)} />
     )
 }
 

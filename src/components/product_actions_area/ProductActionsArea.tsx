@@ -6,7 +6,7 @@ import { ProductContext } from "../../context/ProductContex";
 import { FaCheck } from "react-icons/fa";
 import type { ProductType } from "../../types/product";
 
-const ProductActionsArea = (props: { product: ProductType, isInEditMode: boolean, setIsInEditMode: (isInEditMode: boolean) => void }) => {
+const ProductActionsArea = (props: { product: ProductType, isInEditMode: boolean, setIsInEditMode: (isInEditMode: boolean) => void, class: string }) => {
     const { executeAction } = useContext(ProductContext);
     const { id, name, price } = props.product;
 
@@ -27,7 +27,7 @@ const ProductActionsArea = (props: { product: ProductType, isInEditMode: boolean
     }
 
     return (
-        <div>
+        <div className={props.class}>
             <ProductAction 
                 icon={props.isInEditMode ? <FaCheck /> : <MdModeEditOutline />} 
                 action={editModeAction} 

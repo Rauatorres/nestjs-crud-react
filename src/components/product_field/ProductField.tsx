@@ -1,8 +1,8 @@
 import type { ReactNode } from "react"
 
-const ProductField = (props: { children: ReactNode }) => {
+const ProductField = (props: { children: ReactNode, class: string }) => {
     return (
-        <div>{props.children}</div>
+        <div className={props.class}>{props.children}</div>
     )
 }
 

@@ -6,6 +6,8 @@ import { getAll } from "../../api/api";
 import type { ProductType } from "../../types/product";
 import Product from "../product/Product";
 
+import styles from './productList.module.css';
+
 const ProductList = () => {
     const { productList, setProductList, actionCounter } = useContext(ProductContext);
 
@@ -32,7 +34,7 @@ const ProductList = () => {
     }
 
     return (
-        <div>
+        <div className={styles.productList}>
             <ProductListTitleLine />
             {showProductList(productList)}
             <ProductAddButton />

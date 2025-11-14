@@ -1,0 +1,22 @@
+.product{
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.315);
+}
+
+.col1, .col2, .col3{
+    padding: var(--product-columns-padding);
+    color: rgba(255, 255, 255, 0.795);
+}
+
+.col1, .col2{
+    font-size: 0.8rem;
+}
+
+.col1{
+    width: var(--product-column-1-width);
+}
+
+.col2{
+    width: var(--product-column-2-width);
+}
