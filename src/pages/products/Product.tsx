@@ -21,8 +21,8 @@ const Product = (props: { id: number, name: string, price: number }) => {
         }else{
             return (
                 <>
-                    <ProductFieldEdit class={styles.col1} value={name} setFieldValue={setName} />
-                    <ProductFieldEdit class={styles.col2} value={price} setFieldValue={setPrice} />
+                    <ProductFieldEdit class={"col1"} value={name} setFieldValue={setName} />
+                    <ProductFieldEdit class={"col2"} value={price} setFieldValue={setPrice} />
                 </>
 
             )

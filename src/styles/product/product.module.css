@@ -20,3 +20,7 @@
 .col2{
     width: var(--product-column-2-width);
 }
+
+.col3{
+    margin-left: auto;
+}
