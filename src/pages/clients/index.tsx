@@ -1,4 +1,4 @@
-import ClientList from "../../components/client_list/ClientList";
+import ClientList from "./ClientList";
 import Page from "../../components/page/Page";
 import { ClientContextWrapper } from "../../context/ClientContext";
 

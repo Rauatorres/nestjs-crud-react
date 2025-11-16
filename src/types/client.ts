@@ -4,4 +4,6 @@ type Client = {
     age: number
 };
 
-export type { Client }
+type ClientEditModeListType = { id: number, data: {name?: string, age?: number} }[];
+
+export type { Client, ClientEditModeListType }

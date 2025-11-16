@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import Content from "../content/Content";
 import Header from "../header/Header";
-import PageTitle from "../page_title/PageTitle";
+import PageTitle from "./PageTitle";
 
 const Page = (props: { currentPage: string, pageTitle: string, children?: ReactNode }) => {
     return(

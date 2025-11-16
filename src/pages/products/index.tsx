@@ -1,5 +1,5 @@
 import Page from "../../components/page/Page";
-import ProductList from "../../components/product_list/ProductList";
+import ProductList from "./ProductList";
 import { ProductContextWrapper } from "../../context/ProductContex";
 
 const ProductsPage = () => {

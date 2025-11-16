@@ -1,6 +1,6 @@
-import Navbar from "../navbar/Navbar";
+import Navbar from "./Navbar";
 
-import styles from "./header.module.css";
+import styles from "../../styles/header/header.module.css";
 
 const Header = (props: {currentPage: string}) => {
     return(
