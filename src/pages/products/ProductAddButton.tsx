@@ -3,6 +3,8 @@ import { useContext } from "react"
 import { ProductContext } from "../../context/ProductContex"
 import { add } from "../../service/api";
 
+import styles from '../../styles/product/productAddButton.module.css';
+
 async function addProduct(action: () => void){
     const res = await add('product', { name: 'novo produto', price: 0 });
     if(res){
@@ -11,11 +13,11 @@ async function addProduct(action: () => void){
 }
 
 const ProductAddButton = () => {
-    const { executeAction } = useContext(ProductContext)
+    const { executeAction } = useContext(ProductContext);
 
     return (
-        <button onClick={() => addProduct(executeAction)}><MdAdd /></button>
+        <button className={styles.button} onClick={() => addProduct(executeAction)}><MdAdd /></button>
     )
-}
+};
 
 export default ProductAddButton

@@ -1,0 +1,8 @@
+.button{
+    all: unset;
+    font-size: 3rem;
+    cursor: pointer;
+    display: block;
+    width: fit-content;
+    margin: 1rem auto;
+}
