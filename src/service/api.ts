@@ -38,12 +38,16 @@ async function apiRequest<ResponseType>(type: string, path: string, body?: objec
     return req.data;
 }
 
-async function getOne<Type>(table: string, id: number){
+async function getOne<Type>(table: string, id: number): Promise<Type>{
     return await apiRequest<Type>("get", `${table}/${id}`);
 }
 
-async function getAll<Type>(table: string) {
+async function getAll<Type>(table: string): Promise<Type[]> {
     return await apiRequest<Type[]>("get", `${table}/all`);
+}
+
+async function getMany<Type>(table: string, requisite: string, value: string | number): Promise<Type[]> {
+    return await apiRequest<Type[]>("get", `${table}/${requisite}/${value}`);
 }
 
 async function add(table: string, body: object) {
@@ -58,4 +62,4 @@ async function update(table: string, id: number, body: object) {
     return await apiRequest<UpdateResponse>("patch", `${table}/${id}`, body);
 }
 
-export { getOne, getAll, add, del, update }
+export { getOne, getAll, add, del, update, getMany }

@@ -69,7 +69,7 @@ const ClientCardActionsArea = (props: { clientId: number })=>{
         }else{
             return (
                 <>
-                    <ClientCardAction icon={<GoListUnordered />} action={() => window.location.href = '/'}/>
+                    <ClientCardAction icon={<GoListUnordered />} action={() => window.location.href = `/pedidos/${props.clientId}`}/>
                     <ClientCardAction icon={<MdModeEditOutline />} action={callEditMode} />
                     <ClientCardAction icon={<MdDelete />} action={async () => await deleteClient(props.clientId)} />
                 </>
