@@ -3,11 +3,18 @@ import { IoIosRemove } from "react-icons/io";
 import { removeFrom } from "../../service/api";
 import { OrderContext } from "../../context/OrderContext";
 
+type OrderProductProps = { 
+    id: number, 
+    name: string, 
+    price: number, 
+    orderId: number 
+};
+
 async function removeProduct(id: number, orderId: number){
     await removeFrom('order', orderId, 'product', id);
 }
 
-const OrderProduct = (props: { id: number, name: string, price: number, orderId: number }) => {
+const OrderProduct = (props: OrderProductProps) => {
     const [isMouseOver, setIsMouseOver] = useState(false);
 
     const { executeAction } = useContext(OrderContext);

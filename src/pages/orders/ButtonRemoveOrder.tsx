@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { OrderContext } from "../../context/OrderContext";
 
 async function removeOrder(id: number, executeAction: () => void){
-    const removeOrderApi = await del('order', id);
+    await del('order', id);
     executeAction();
 }
 

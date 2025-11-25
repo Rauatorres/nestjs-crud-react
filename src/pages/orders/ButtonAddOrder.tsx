@@ -4,19 +4,19 @@ import { useContext } from "react";
 import { OrderContext } from "../../context/OrderContext";
 
 const ButtonAddOrder = () => {
-    const { clientId } = useContext(OrderContext);
+    const { clientId, executeAction } = useContext(OrderContext);
     
-    async function addOrder(){
-        const client = await getOne('client', clientId);
+    async function addOrder(clientIdParam: number, action: () => void){
+        const client = await getOne('client', clientIdParam);
         await add('order', {
             client: client,
-            products: []
+            products: [],
         });
-        console.log('teste');
+        action();
     }
 
     return (
-        <button onClick={addOrder}>Novo Pedido <MdOutlinePostAdd /></button>
+        <button onClick={() => addOrder(clientId, executeAction)}>Novo Pedido <MdOutlinePostAdd /></button>
     );
 };
 
