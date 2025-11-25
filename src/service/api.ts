@@ -62,4 +62,12 @@ async function update(table: string, id: number, body: object) {
     return await apiRequest<UpdateResponse>("patch", `${table}/${id}`, body);
 }
 
-export { getOne, getAll, add, del, update, getMany }
+async function insertInto(table: string, idMainTableRow: number, insertedTable: string, idInsertedTableRow: number){
+    return await apiRequest<UpdateResponse>("patch", `${table}/${idMainTableRow}/add${insertedTable}/${idInsertedTableRow}`);
+}
+
+async function removeFrom(table: string, idMainTableRow: number, removedTable: string, idRemovedTableRow: number){
+    return await apiRequest<UpdateResponse>("patch", `${table}/${idMainTableRow}/remove${removedTable}/${idRemovedTableRow}`);
+}
+
+export { getOne, getAll, add, del, update, getMany, insertInto, removeFrom }

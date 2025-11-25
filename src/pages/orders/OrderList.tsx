@@ -7,9 +7,8 @@ import ButtonAddOrder from "./ButtonAddOrder";
 import Order from "./Order";
 
 const OrderList = () => {
-    const { clientId } = useContext(OrderContext);
+    const { clientId, orderList, setOrderList, actionCounter } = useContext(OrderContext);
 
-    const [orderList, setOrderList] = useState<OrderType[] | []>([]);
 
     useEffect(() => {
         async function getOrders(){
@@ -17,7 +16,7 @@ const OrderList = () => {
             setOrderList(apiGetOrders);
         }
         getOrders()
-    }, []);
+    }, [actionCounter]);
 
     function showOrders(){
         return orderList.map(order => {
