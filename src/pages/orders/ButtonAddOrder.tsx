@@ -3,6 +3,8 @@ import { add, getOne } from "../../service/api";
 import { useContext } from "react";
 import { OrderContext } from "../../context/OrderContext";
 
+import styles from '../../styles/orders/ButtonAddOrder.module.css';
+
 const ButtonAddOrder = () => {
     const { clientId, executeAction } = useContext(OrderContext);
     
@@ -16,7 +18,7 @@ const ButtonAddOrder = () => {
     }
 
     return (
-        <button onClick={() => addOrder(clientId, executeAction)}>Novo Pedido <MdOutlinePostAdd /></button>
+        <button className={styles.button} onClick={() => addOrder(clientId, executeAction)}>Novo Pedido <MdOutlinePostAdd className={styles.icon} /></button>
     );
 };
 

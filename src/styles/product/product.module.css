@@ -15,6 +15,7 @@
 
 .col1{
     width: var(--product-column-1-width);
+    word-wrap: break-word;
 }
 
 .col2{

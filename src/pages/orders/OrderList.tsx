@@ -6,6 +6,8 @@ import ClientName from "./ClientName";
 import ButtonAddOrder from "./ButtonAddOrder";
 import Order from "./Order";
 
+import styles from '../../styles/orders/OrderList.module.css';
+
 const OrderList = () => {
     const { clientId, orderList, setOrderList, actionCounter } = useContext(OrderContext);
 
@@ -29,7 +31,7 @@ const OrderList = () => {
     return (
         <div>
             <ClientName/>
-            <div>
+            <div className={styles.orderList}>
                 {showOrders()}
             </div>
             <ButtonAddOrder />

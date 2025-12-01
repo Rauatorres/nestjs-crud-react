@@ -1,0 +1,26 @@
+.product{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #626262;
+    margin: 1.3rem 0;
+    padding: 1rem;
+    font-size: 0.6rem;
+    border-radius: 0.5rem;
+}
+
+.productName{
+    max-width: 50%;
+    /* background-color: red; */
+    word-break: break-all;
+}
+
+.removeButton{
+    all: unset;
+    /* background-color: red; */
+    display: block;
+    margin-bottom: -1rem;
+    margin-top: -0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}

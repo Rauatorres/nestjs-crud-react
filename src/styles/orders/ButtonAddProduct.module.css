@@ -1,0 +1,53 @@
+.buttonAddMode, .addButtonArea{
+    margin-bottom: 0.8rem;
+}
+
+.buttonAddMode{
+    all: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    font-size: 0.7rem;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.addIcon{
+    margin-left: 0.7rem;
+    font-size: 1.1rem;
+}
+
+.addButtonArea{
+    display: flex;
+    justify-content: space-between;
+}
+
+.select, .addButton{
+    all: unset;
+}
+
+.select{
+    border: 1px solid #626262;
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+    padding-right: 2rem;
+    border-radius: 0.4rem;
+    width: 65%;
+    background-image: url('../../assets/arrow_drop_down_icon.svg');
+    background-repeat: no-repeat;
+    background-position: right 0.1rem center;
+}
+
+.option{
+    background-color: #252525;
+    word-wrap: break-word;
+}
+
+.option:hover{
+    background-color: #353535;
+}
+
+.addButton{
+    cursor: pointer;
+}

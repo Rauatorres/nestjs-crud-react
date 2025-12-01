@@ -1,0 +1,19 @@
+.order{
+    margin: 5rem 0;
+    background-color: #252525;
+    width: var(--order-width);
+    padding: 2rem;
+    border-radius: 0.7rem;
+    box-shadow: 2px 1px 10px 5px rgba(0, 0, 0, 0.205);
+}
+
+.dateRow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.7rem;
+}
+
+.productList{
+    margin: 2rem 0;
+}

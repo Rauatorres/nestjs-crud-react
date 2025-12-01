@@ -1,8 +1,9 @@
-import axios from "axios";
 import { useContext, useEffect, useState } from "react"
 import { getOne } from "../../service/api";
 import type { Client } from "../../types/client";
 import { OrderContext } from "../../context/OrderContext";
+
+import styles from '../../styles/orders/ClientName.module.css';
 
 const ClientName = () => {
     const { clientId } = useContext(OrderContext);
@@ -18,7 +19,7 @@ const ClientName = () => {
     }, [])
 
     return (
-        <h2>{clientName}</h2>
+        <h2 className={styles.clientName}>{clientName}</h2>
     )
 }
 

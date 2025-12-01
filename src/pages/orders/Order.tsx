@@ -5,6 +5,8 @@ import ButtonRemoveOrder from "./ButtonRemoveOrder";
 import ExpiringDate from "./ExpiringDate";
 import OrderProduct from "./OrderProduct";
 
+import styles from '../../styles/orders/Order.module.css';
+
 type OrderProps = {
     id: number;
     client: Client;
@@ -20,12 +22,12 @@ const Order = (props: OrderProps) => {
     }
 
     return (
-        <div>
-            <div>
+        <div className={styles.order}>
+            <div className={styles.dateRow}>
                 <ExpiringDate expiresAt={props.expiresAt} />
                 <ButtonRemoveOrder id={props.id} />
             </div>
-            <div>
+            <div className={styles.productList}>
                 {showProductList()}
             </div>
             <ButtonAddProduct orderId={props.id} />
